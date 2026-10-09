@@ -5,7 +5,8 @@ public class Scroller : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Transform a = transform;
+
     }
 
     // Update is called once per frame
