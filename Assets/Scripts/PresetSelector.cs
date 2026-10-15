@@ -8,7 +8,9 @@ public class PresetSelector : MonoBehaviour
 
 	[SerializeField] private Camera mainCamera;
 	[SerializeField] private Transform[] presetTransform;
+	private System.Collections.Generic.List<Transform> availablePreset = new System.Collections.Generic.List<Transform>(6);
 	[SerializeField] private Transform[] birdTransform;
+	private System.Collections.Generic.List<Transform> availableBird = new System.Collections.Generic.List<Transform>(5);
 
     void Awake() {
 		float worldScreenHeight = mainCamera.orthographicSize * 2.0f;
@@ -18,28 +20,28 @@ public class PresetSelector : MonoBehaviour
 		foreach(Transform t in presetTransform){
 			t.position=initPos;
 			t.localScale=initScale;
+			t.gameObject.SetActive(false);
+			availablePreset.Add(t);
 		}
-	}
-
-	private Transform GetAvailableBird(){
-		foreach(Transform b in birdTransform){
-			if(b.gameObject.activeInHierarchy) continue;
-			return b;
+		foreach(Transform t in birdTransform){
+			t.gameObject.SetActive(false);
+			availableBird.Add(t);
 		}
-		return null;
 	}
 
 	// INFO: ==== API of PresetSelector ====
 	public Transform borrowNextLand(){
 		// select preset
-		const int maxAmountPreset=6;
-		int iPreset = Random.Range(0, maxAmountPreset);
-		Transform selectedPreset = presetTransform[iPreset];
+		int iPreset = Random.Range(0, availablePreset.Count);
+		Transform selectedPreset = availablePreset[iPreset];
+		availablePreset.RemoveAt(iPreset);
+		selectedPreset.gameObject.SetActive(true);
 		// select cactus
 		int iCactus = Random.Range(0, selectedPreset.childCount);
 		Transform selectedCactus = selectedPreset.GetChild(iCactus).transform;
 		// swap cactus with bird
-		Transform selectedBird = GetAvailableBird();
+		Transform selectedBird = availableBird[0];
+		availableBird.RemoveAt(0);
 		if(selectedBird==null) return selectedPreset;
 		selectedBird.SetParent(selectedPreset);
 		selectedBird.position = selectedCactus.position;
@@ -50,12 +52,17 @@ public class PresetSelector : MonoBehaviour
 	}
 
 	public void returnLand(Transform preset){
-		foreach(Transform c in preset)
+		for (int i = preset.childCount - 1; i >= 0; i--) {
+            Transform c = preset.GetChild(i);
 			if(c.name.StartsWith("bird")){
 				c.SetParent(null);
 				c.gameObject.SetActive(false);
+				availableBird.Add(c);
 			} else {
 				c.gameObject.SetActive(true);
 			}
+		}
+		preset.gameObject.SetActive(false);
+		availablePreset.Add(preset);
 	}
 }
