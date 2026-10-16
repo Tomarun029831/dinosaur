@@ -8,13 +8,11 @@ public class InputHandler : MonoBehaviour
 
     void Update()
     {
-        var current = Keyboard.current;
-        if (current == null) return;
-
-        var spaceKey = current.spaceKey;
-        if (spaceKey.wasPressedThisFrame)
-        {
-            dinosaur.Jump();
-        }
+		if(Keyboard.current!=null)
+			if(Keyboard.current.spaceKey.wasPressedThisFrame)
+				dinosaur.Jump();
+		if(Touchscreen.current!=null)
+			if(Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+				dinosaur.Jump();
     }
 }
