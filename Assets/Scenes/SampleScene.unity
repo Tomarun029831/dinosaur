@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &45705708 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7692889066301624226, guid: 5dd6b279e93b5a845a200ea062739be6, type: 3}
+  m_PrefabInstance: {fileID: 481939366}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058a3a17a24543e4a95822d749c4ffbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &86753018
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +370,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 432686374}
+  - component: {fileID: 432686375}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -381,6 +393,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &432686375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432686373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed6f7a71e7001744eb1f80162b6627a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  resultText: {fileID: 0}
+  dinosaur: {fileID: 45705708}
 --- !u!4 &471387959 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4224329691494925403, guid: 5c6c1705d293b2f428996c59a9e7c122, type: 3}
@@ -998,6 +1024,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1128223671}
+  - component: {fileID: 1128223672}
   m_Layer: 0
   m_Name: InputHandler
   m_TagString: Untagged
@@ -1020,6 +1047,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1128223672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128223670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6eee012328ef564da021827902e8f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputHandler
+  dinosaur: {fileID: 45705708}
 --- !u!4 &1155160867 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4224329691494925403, guid: a016a4b1922e9b64da75d22f5c994768, type: 3}

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
@@ -7,13 +8,13 @@ public class InputHandler : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        var current = Keyboard.current;
+        if (current == null) return;
+
+        var spaceKey = current.spaceKey;
+        if (spaceKey.wasPressedThisFrame)
         {
-            if (dinosaur != null)
-            {
-                // 恐竜に「Jump」の指示を送る
-                dinosaur.Jump();
-            }   
+            dinosaur.Jump();
         }
     }
 }
