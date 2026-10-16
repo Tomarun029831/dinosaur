@@ -1,6 +1,4 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
 public class Dinosaur : MonoBehaviour
@@ -19,6 +17,7 @@ public class Dinosaur : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite normalSprite;
     [SerializeField] private Sprite crouchSprite;
+	[SerializeField] private GameManager gameManager;
 
     private bool isCrouching = false;
 
@@ -88,8 +87,8 @@ public class Dinosaur : MonoBehaviour
         //Debug.Log("すり抜けた");
         if (collision.gameObject.name.StartsWith("cactus") || collision.gameObject.name.StartsWith("bird"))
         {
-            // 死亡処理
             isDeath = true;
+			gameManager.ReloadScene();
         }
     }
 }

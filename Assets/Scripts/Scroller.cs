@@ -47,7 +47,7 @@ public class Scroller : MonoBehaviour
         foreach ( Transform t in BG )
         {
             
-            t.Translate(new Vector3(-1 * scrollSpeed, 0, 0));
+            t.Translate(new Vector3(-1 * scrollSpeed * Time.deltaTime, 0, 0));
             if (t.transform.position.x <= leftOffset)
                 {
                     t.Translate(new Vector3(rightOffset - leftOffset, 0, 0));    // rightOffsetへ飛ばす
@@ -57,7 +57,7 @@ public class Scroller : MonoBehaviour
         /* プリセットスクロール */
         int i;
         for (i=0; i<3; i++) {
-            borrowed_Preset[i].Translate(new Vector3(-1 * scrollSpeed, 0, 0));
+            borrowed_Preset[i].Translate(new Vector3(-1 * scrollSpeed * Time.deltaTime, 0, 0));
             if (borrowed_Preset[i].transform.position.x <= leftOffset)
             {                
                 borrowed_Preset[i].position = new Vector3(32, 0, 0);

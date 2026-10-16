@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
     }
 
     // シーンを最初からやり直すメソッド
-    private void ReloadScene()
+    public void ReloadScene()
     {
         // 現在アクティブなシーンの名前を取得して再読み込みする
         string currentSceneName = SceneManager.GetActiveScene().name;

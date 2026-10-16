@@ -449,6 +449,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7692889066301624226, guid: 5dd6b279e93b5a845a200ea062739be6, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 432686375}
+    - target: {fileID: 7692889066301624226, guid: 5dd6b279e93b5a845a200ea062739be6, type: 3}
       propertyPath: StageLayer.m_Bits
       value: 64
       objectReference: {fileID: 0}
