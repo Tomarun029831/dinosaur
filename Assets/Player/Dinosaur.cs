@@ -40,15 +40,6 @@ public class Dinosaur : MonoBehaviour
             return;
         }
 
-        var upArrowKey = current.upArrowKey;
-
-        if (GroundChk() && !isDeath) {
-            if (upArrowKey.wasPressedThisFrame)
-            {
-                Jump();
-            }
-        }
-
         // 下矢印キーの入力を取得
         bool crouchInput = Keyboard.current != null &&
             Keyboard.current.downArrowKey.isPressed;
@@ -64,7 +55,9 @@ public class Dinosaur : MonoBehaviour
     }
 
     public void Jump(){
-        rbody2D.AddForce(Vector2.up * jumpForce);
+        if (GroundChk() && !isDeath) {
+            rbody2D.AddForce(Vector2.up * jumpForce);
+        }
     }
 
     public void Crouch(bool crouch)
