@@ -89,9 +89,14 @@ public class Dinosaur : MonoBehaviour
 		return Physics2D.Linecast(startposition, endposition, StageLayer);
 	}
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision.gameObject);
         //Debug.Log("すり抜けた");
-        isDeath = true;
+        if (collision.gameObject.name.StartsWith("cactus") || collision.gameObject.name.StartsWith("bird"))
+        {
+            // 死亡処理
+            isDeath = true;
+        }
     }
 }
