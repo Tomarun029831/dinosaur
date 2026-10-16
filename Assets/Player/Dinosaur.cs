@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Dinosaur : MonoBehaviour
 {
     public bool isDeath = false;
     public LayerMask StageLayer;

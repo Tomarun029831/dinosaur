@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement; // シーン切り替え・リロード用
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI resultText;
+    [SerializeField] private Dinosaur dinosaur;
     private float survivalTime = 0f;
     private bool isPlaying = true;
     private bool isDeadState = false; // 死亡状態フラグ
@@ -33,12 +34,12 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        Dinosaur.OnDied += HandlePlayerDeath;
+        // dinosaur.OnDied += HandlePlayerDeath;
     }
 
     private void OnDisable()
     {
-        Dinosaur.OnDied -= HandlePlayerDeath;
+        // dinosaur.OnDied -= HandlePlayerDeath;
     }
 
     private void HandlePlayerDeath()
