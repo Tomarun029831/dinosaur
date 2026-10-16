@@ -7,7 +7,7 @@ public class Dinosaur : MonoBehaviour
     public LayerMask StageLayer;
     Rigidbody2D rbody2D;
 
-    [SerializeField] private int jumpForce = 300;
+    [SerializeField] private int jumpForce;
 
     // しゃがみ
     [Header("Components")]

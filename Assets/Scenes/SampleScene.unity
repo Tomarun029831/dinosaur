@@ -420,41 +420,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3111310572231159058, guid: 5dd6b279e93b5a845a200ea062739be6, type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3111310572231159058, guid: 5dd6b279e93b5a845a200ea062739be6, type: 3}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3111310572231159058, guid: 5dd6b279e93b5a845a200ea062739be6, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-    - target: {fileID: 3111310572231159058, guid: 5dd6b279e93b5a845a200ea062739be6, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3111310572231159058, guid: 5dd6b279e93b5a845a200ea062739be6, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3111310572231159058, guid: 5dd6b279e93b5a845a200ea062739be6, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3111310572231159058, guid: 5dd6b279e93b5a845a200ea062739be6, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7692889066301624226, guid: 5dd6b279e93b5a845a200ea062739be6, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 432686375}
     - target: {fileID: 7692889066301624226, guid: 5dd6b279e93b5a845a200ea062739be6, type: 3}
-      propertyPath: StageLayer.m_Bits
-      value: 64
+      propertyPath: playerCollider
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8301445772966583461, guid: 5dd6b279e93b5a845a200ea062739be6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1397,7 +1369,7 @@ MonoBehaviour:
   - {fileID: 86753020}
   - {fileID: 2064285971}
   presetselector: {fileID: 112165435}
-  scrollSpeed: 0.03
+  scrollSpeed: 5
   isStop: 0
 --- !u!4 &1960668316
 Transform:
