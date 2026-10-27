@@ -40,9 +40,9 @@ public class PresetSelector : MonoBehaviour
 		int iCactus = Random.Range(0, selectedPreset.childCount);
 		Transform selectedCactus = selectedPreset.GetChild(iCactus).transform;
 		// swap cactus with bird
+		if(availableBird.Count==0) return selectedPreset;
 		Transform selectedBird = availableBird[0];
 		availableBird.RemoveAt(0);
-		if(selectedBird==null) return selectedPreset;
 		selectedBird.SetParent(selectedPreset);
 		selectedBird.position = selectedCactus.position;
 		selectedBird.gameObject.SetActive(true);
