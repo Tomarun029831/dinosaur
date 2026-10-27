@@ -53,7 +53,7 @@ public class PresetSelector : MonoBehaviour
 
 	public void returnLand(Transform preset){
 		for (int i = preset.childCount - 1; i >= 0; i--) {
-            Transform c = preset.GetChild(i);
+			Transform c = preset.GetChild(i);
 			if(c.name.StartsWith("bird")){
 				c.SetParent(null);
 				c.gameObject.SetActive(false);
